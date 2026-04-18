@@ -166,11 +166,12 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 50px;
+    padding-top: 150px;
+    padding-bottom: 120px;
 }
 .hero-layout {
     display: flex;
