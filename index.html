@@ -19,13 +19,13 @@
     <!-- Navbar -->
     <header id="navbar">
         <nav class="container">
-            <h2 class="logo" onclick="scrollToSection('home')">Mahendran<span></span></h2>
+            <h2 class="logo" onclick="scrollToSection('home')">Mahendran</h2>
             <ul class="nav-links">
-                <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
-                <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
-                <li><a href="#projects" onclick="scrollToSection('projects')">Projects</a></li>
-                <li><a href="#education" onclick="scrollToSection('education')">Journey</a></li>
-                <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+                <li><a href="#home" onclick="event.preventDefault(); scrollToSection('home')">Home</a></li>
+                <li><a href="#about" onclick="event.preventDefault(); scrollToSection('about')">About</a></li>
+                <li><a href="#projects" onclick="event.preventDefault(); scrollToSection('projects')">Projects</a></li>
+                <li><a href="#education" onclick="event.preventDefault(); scrollToSection('education')">Journey</a></li>
+                <li><a href="#contact" onclick="event.preventDefault(); scrollToSection('contact')">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <div class="line"></div>

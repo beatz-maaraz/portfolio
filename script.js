@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle("active");
+            hamburger.classList.toggle("active");
         });
     }
 
@@ -96,11 +97,21 @@ function scrollToSection(id) {
     if (section) {
         // close mobile menu if open
         const navLinks = document.querySelector(".nav-links");
+        const hamburger = document.querySelector(".hamburger");
         if(navLinks && navLinks.classList.contains("active")) {
             navLinks.classList.remove("active");
+            if (hamburger) hamburger.classList.remove("active");
         }
 
-        section.scrollIntoView({ behavior: "smooth" });
+        // 110px offset to accommodate the modern floating pill header!
+        const headerOffset = 110; 
+        const elementPosition = section.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+        window.scrollTo({
+             top: offsetPosition,
+             behavior: "smooth"
+        });
     }
 }
 
