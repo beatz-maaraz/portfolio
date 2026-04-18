@@ -170,9 +170,50 @@ nav {
     display: flex;
     align-items: center;
     position: relative;
+    padding-top: 50px;
+}
+.hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
 }
 .hero-content {
-    max-width: 800px;
+    flex: 1;
+    max-width: 600px;
+}
+.hero-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.profile-img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+    border: 3px solid rgba(255,255,255,0.1);
+    background: var(--bg-card);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.profile-img:hover {
+    transform: scale(1.05);
+    border-color: var(--primary);
+}
+.img-glow {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background: var(--primary);
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.3;
+    z-index: 1;
+    animation: float 6s infinite alternate ease-in-out;
 }
 .greeting {
     font-size: 1.2rem;
@@ -239,6 +280,29 @@ nav {
 .btn-secondary:hover {
     background: rgba(255,255,255,0.05);
     border-color: var(--text-main);
+}
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+.social-btn:hover {
+    background: var(--primary);
+    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--primary-glow);
 }
 .scroll-indicator {
     position: absolute;
@@ -502,6 +566,20 @@ footer p { color: var(--text-muted); }
         border-radius: 0 0 25px 25px;
     }
     
+    .hero-layout {
+        flex-direction: column-reverse; /* Image on top */
+        gap: 20px;
+    }
+    .profile-img {
+        width: 250px;
+        height: 250px;
+        margin-top: 40px;
+    }
+    .img-glow {
+        width: 250px;
+        height: 250px;
+        margin-top: 40px;
+    }
     .hero-content {
         text-align: center;
         margin: 0 auto;
